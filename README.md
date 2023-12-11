@@ -5,6 +5,7 @@ A special build of curl for Windows that can impersonate Chrome and Safari.
 Original idea and patches from https://github.com/lwthiker/curl-impersonate
 
 # Version
+
 Current version based on:
 * Curl (https://github.com/curl/curl): v7.84.0
 * BoringSSL (https://github.com/google/boringssl): 3a667d10e94186fd503966f5638e134fe9fb4080
