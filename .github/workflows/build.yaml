@@ -27,13 +27,14 @@ jobs:
         name: Install msys
         with:
           update: true
+          msystem: MINGW32
           install: >-
             patch
-            mingw-w64-x86_64-make
-            mingw-w64-x86_64-cmake
-            mingw-w64-x86_64-nasm
-            mingw-w64-x86_64-gcc
-            mingw-w64-x86_64-go
+            mingw-w64-i686-make
+            mingw-w64-i686-cmake
+            mingw-w64-i686-nasm
+            mingw-w64-i686-gcc
+            mingw-w64-i686-go
       - name: Copy and patch
         shell: msys2 {0}
         run: ./build.sh
@@ -41,7 +42,7 @@ jobs:
       #   uses: mxschmitt/action-tmate@v3
       - uses: ilammy/msvc-dev-cmd@v1
       - name: Generate lib files
-        run: ./dll2lib.bat 64 dist\libcurl.dll
+        run: ./dll2lib.bat 32 dist\libcurl.dll
       - name: Build tarball
         shell: msys2 {0}
         run: tar cvzf curl-impersonate-chrome.tar.gz -C dist .
